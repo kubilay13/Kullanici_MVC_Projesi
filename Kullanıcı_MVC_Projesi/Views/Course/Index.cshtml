@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Candidate>
+
+   @if(Model.Count() > 0 && Model != null)
+   {
+    <h6 class="display-6">
+        Katılımcı Listelmeme: 
+    </h6>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>FirstName:</th>
+                <th>LastName:</th>
+                <th>Full Name:</th>
+                <th>Mail:</th>
+                <th>Age:</th>
+                <th>Aplly At:</th>
+                <th>Course:</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Candidate candidate in Model)
+            {
+                <tr>
+                    <td>@candidate.FirstName</td>
+                    <td>@candidate.LastName</td>
+                    <td>@candidate.FullName</td>
+                    <td>@candidate.Email</td>
+                    <td>@candidate.Age</td>
+                    <td>@candidate.ApplyAt</td>
+                    <td>@candidate.SelectedCourse</td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>
+    <h6 style="text-align:center;">Katılan Üye Sayısı:(@Model.Count())</h6>
+    }
+    else
+    {
+     <div class="alert alert-info">
+        There is no application.Please click here to
+        <a class="alert-link" asp-action="Apply">
+            apply.
+        </a>
+     </div>
+    }
