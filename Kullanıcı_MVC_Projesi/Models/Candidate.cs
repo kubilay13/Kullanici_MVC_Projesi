@@ -9,9 +9,12 @@ namespace Kullanıcı_MVC_Projesi.Models
         [Required(ErrorMessage ="Mail İs required")]
         public  string? Email { get; set; }
         [Required(ErrorMessage = "FirstName İs required")]
+
+        
         public string? FirstName { get; set; }
         [Required(ErrorMessage = "lastName İs required")]
         public string? LastName { get; set;}
+        public string? SchoolName { get; set; }
         public string? FullName => $"{FirstName} {LastName?.ToUpper()}";
         public int? Age { get; set; }
      
